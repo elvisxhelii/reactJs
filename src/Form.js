@@ -77,24 +77,24 @@ handleChange = (selectedOption) => {
     const { selectedOption } = this.state;
 
     return (
-    	<div className="row">
-    		<div className="col-lg-6 line">
+    	<div className="row newclass">
+    		<div className="col-lg-6 col-md-6 line">
     		 <form>
-    		 <div className="col-lg-12 formclass" >
+    		 <div className="col-lg-12 col-md-12 formclass" >
 		        <label >
 		          Name
 		        </label><br/>
             <input type="text" name="name" value={this.state.name} onChange={this.handleUserInput} />
             <div>{this.state.nameError}</div>
 		      </div>
-		      <div className="col-lg-12 formclass">
+		      <div className="col-lg-12 col-md-12 formclass">
 		        <label >
 		          Last Name
 		        </label><br/>
             <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleUserInput} />
 		          <div>{this.state.lastNameError}</div>
 		      </div>
-		      <div className="col-lg-12 formclass">
+		      <div className="col-lg-12 col-md-12 formclass">
 		        <label >
 		          E-mail
 		        </label><br/>
@@ -102,7 +102,7 @@ handleChange = (selectedOption) => {
 		        <div>{this.state.emailError}</div>
 			  </div>
         <br />
-        <div className="col-lg-12 formclass">
+        <div className="col-lg-12 col-md-12 formclass">
         <label >
 		         Hobbies
 		        </label><br/>
@@ -116,17 +116,17 @@ handleChange = (selectedOption) => {
             </div>
 		      </form>
     		  </div>
-    		<div className="col-lg-6">
-    			<div className="col-lg-12"><br/>
+    		<div className="col-lg-6 col-md-6">
+    			<div className="col-lg-12 col-md-12"><br/>
 		        <p>{'{ '}{this.state.name}{' }'}</p>
 		      </div>
-		      <div className="col-lg-12"><br/>
+		      <div className="col-lg-12 col-md-12"><br/>
 		        <p>{'{ '}{this.state.lastName}{' }'}</p>
 		      </div>
-		      <div className="col-lg-12"><br/>
+		      <div className="col-lg-12 col-md-12"><br/>
 		        <p>{'{ '}{this.state.email}{' }'}</p>
 			  </div>
-		      <div className="col-lg-12"><br/>
+		      <div className="col-lg-12 col-md-12"><br/>
           <div>{'Hobbies'}{selectedOption.map(option => (<p>{'{ '}{option.label}{' }'}</p>))}</div>
 			  </div>
     		</div>
