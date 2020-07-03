@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import CreatableSelect from 'react-select/creatable';
 
 const options = [
@@ -18,9 +19,11 @@ export default class NameForm extends React.Component {
     	nameError: '',
     	lastNameError: '',
       emailError: '',
+      checkbox: false,
       selectedOption: []
   }
     this.handleUserInput = this.handleUserInput.bind(this);
+    this.handleCheckbox = this.handleCheckbox.bind(this);
   }
 
  validate = (input) => {
@@ -73,11 +76,15 @@ handleChange = (selectedOption) => {
   );
 };
 
+handleCheckbox = () => {
+  this.setState({checkbox: !this.state.checkbox});
+}
+
   render() {
     const { selectedOption } = this.state;
 
     return (
-    	<div className="row newclass">
+    	<div className="row newclass" style={{margin : '0',fontSize: '14px'}}>
     		<div className="col-lg-6 col-md-6 line">
     		 <form>
     		 <div className="col-lg-12 col-md-12 formclass" >
@@ -114,6 +121,10 @@ handleChange = (selectedOption) => {
               isMulti
             />
             </div>
+            <div className="col-lg-12 col-md-12 formclass">
+          <input type="checkbox" name="checkbox" onChange={this.handleCheckbox} />
+          {!this.state.checkbox ? (<p>Typebox unchecked</p>) : (<p>Typebox checked</p>)} 
+        </div>
 		      </form>
     		  </div>
     		<div className="col-lg-6 col-md-6">
@@ -130,6 +141,12 @@ handleChange = (selectedOption) => {
           <div>{'Hobbies'}{selectedOption.map(option => (<p>{'{ '}{option.label}{' }'}</p>))}</div>
 			  </div>
     		</div>
+        <div className="col-lg-12 col-sm-12">
+          <br/><br/>
+          <button>
+            <Link to="/registered">Register</Link>
+          </button>
+        </div>
     	</div>
      
     );

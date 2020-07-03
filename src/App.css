@@ -44,6 +44,7 @@ html {
 }
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 .formclass{
   text-align: left;
@@ -59,8 +60,49 @@ body {
     padding-left: 20%;
 }
 .newclass {
-    padding-top: 40px; /*test*/
+    padding-top: 40px;
 }
+.navbar1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+    position: sticky;
+    top: 0px;
+
+}
+.test {
+    color: white;
+    text-decoration: none!important;
+}
+
+.test1 {
+    background-color: red;
+    color: white;
+    padding: 10px;
+}
+
+.customclass {
+}
+
+.image {
+    width: 500px;
+    object-fit: contain;
+}
+
+@media(max-width: 488px) {
+    .image{
+        width: 250px;
+    }
+    .col-lg-6.line {
+    border-right: none;
+    border-right-color: black;
+    padding-left: 20%;
+}
+}
+
 article,
 aside,
 details,
