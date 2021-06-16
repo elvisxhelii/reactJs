@@ -24,9 +24,10 @@ export default class NameForm extends React.Component {
   }
     this.handleUserInput = this.handleUserInput.bind(this);
     this.handleCheckbox = this.handleCheckbox.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
- validate = (input) => {
+ validate(input){
 	let nameError = '';
 	let lastNameError = '';
 	let emailError = '';
@@ -60,7 +61,7 @@ export default class NameForm extends React.Component {
   }
  }
 
-handleUserInput (e) {
+handleUserInput(e){
  	e.preventDefault();
   this.setState({[e.target.name]: e.target.value});
   const isValid = this.validate(e.target.name);
@@ -69,14 +70,14 @@ handleUserInput (e) {
   }
 }
 
-handleChange = (selectedOption) => {
+handleChange(selectedOption){
   this.setState(
     { selectedOption },
     () => console.log(`Option selected:`, this.state.selectedOption)
   );
 };
 
-handleCheckbox = () => {
+handleCheckbox(){
   this.setState({checkbox: !this.state.checkbox});
 }
 
