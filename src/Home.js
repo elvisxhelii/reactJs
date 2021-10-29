@@ -28,8 +28,8 @@ class Home extends React.Component {
 					<h1>Welcome to REACT!</h1>
 				</div>
 				<img 
-				src={logo} 
-				alt="logo" 
+					src={logo} 
+					alt="logo" 
 				/>
 				<button onClick={this.testLazy}>Click me!</button>
 				<div style={{marginTop: '25px'}}> 
